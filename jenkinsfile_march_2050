@@ -3,23 +3,19 @@ pipeline {
 
     stages{  
 
-        stage("BUILD"){
-            steps("check-de-la-coque"){
-                script{
+        stage('BUILD'){
+            steps{
+                script("check-de-la-coque"){
                     echo "Checking de la coque"
                     sleep 10
                     echo "Integrité de la coque à 100%"
                 }
-            }
-            steps("verification-carburant"){
-                script{
+                script("verification-carburant"){
                     echo "Verification du niveau de carburant"
                     sleep 10
                     echo "Réservoir rempli à 74%"
                 }
-            }
-            steps("verification-propulseur"){
-                script{
+                script("verification-propulseur"){
                     echo "Verification de l'integrite des propulseurs"
                     sleep 10
                     echo "Propulseurs intactes"
@@ -27,37 +23,29 @@ pipeline {
             }
         }
 
-        stage("TEST"){
-            steps("verification-electronique"){
-                script{
+        stage('TEST'){
+            steps{
+                script("verification-electronique"){
                     echo "Verification des systemes l'electroniques"
                     sleep 10
                     echo "Integrite du systeme electronique à 100%"
                 }
-            }
-            steps("verification-equipement-nav"){
-                script{
+                script("verification-equipement-nav"){
                     echo "Verification des équipement de navigation"
                     sleep 10
                     echo "Léger disfonctionnement de la carte numerique"  
                 }
-            }
-            steps("verification-vitesse"){
-                script{
+                script("verification-vitesse"){
                     echo "Verification de la vitesse"
                     sleep 15
                     echo "Test de vitesse ok"  
                 }
-            }
-            steps("verification-trajectoire"){
-                script{
+                script("verification-trajectoire"){
                     echo "Verification de la trajectoire"
                     sleep 10
                     echo "Trajectoire ok" 
                 }
-            }
-            steps("verification-altitude"){
-                script{
+                script("verification-altitude"){
                     echo "Verification de l'altitude"
                     sleep 10
                     echo "Test altitude ok"
@@ -65,23 +53,19 @@ pipeline {
             }
         }
 
-    stage("DEPLOY"){
-            steps("verification-equipement-sec"){
-                script{
+        stage('DEPLOY'){
+            steps{
+                script("verification-equipement-sec"){
                     echo "Verification de l'integrite des equipements de secours"
                     sleep 10
                     echo "Equipements de secours ok"
                 }
-            }
-            steps("verification-communication"){
-                script{
+                script("verification-communication"){
                     echo "Verification des equipements de communication"
                     sleep 10
                     echo "Test radio ok"  
                 }
-            }
-            steps("verification-train"){
-                script{
+                script("verification-train"){
                     echo "Verification du déploiement du train d'atterissage"
                     sleep 10
                     echo "Train sorti" 
