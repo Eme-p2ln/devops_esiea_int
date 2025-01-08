@@ -1,77 +1,62 @@
 pipeline {
     agent any
 
-    stages{  
+    stages {
 
-        stage('BUILD'){
-            steps{
-                script("check-de-la-coque"){
-                    echo "Checking de la coque"
-                    sleep 10
-                    echo "Integrité de la coque à 100%"
-                }
-                script("verification-carburant"){
-                    echo "Verification du niveau de carburant"
-                    sleep 10
-                    echo "Réservoir rempli à 74%"
-                }
-                script("verification-propulseur"){
-                    echo "Verification de l'integrite des propulseurs"
-                    sleep 10
-                    echo "Propulseurs intactes"
-                }
+        stage('BUILD') {
+            steps {
+                echo "Checking de la coque"
+                sleep 10
+                echo "Integrité de la coque à 100%"
+
+                echo "Verification du niveau de carburant"
+                sleep 10
+                echo "Réservoir rempli à 74%"
+
+                echo "Verification de l'integrite des propulseurs"
+                sleep 10
+                echo "Propulseurs intactes"
             }
         }
 
-        stage('TEST'){
-            steps{
-                script("verification-electronique"){
-                    echo "Verification des systemes l'electroniques"
-                    sleep 10
-                    echo "Integrite du systeme electronique à 100%"
-                }
-                script("verification-equipement-nav"){
-                    echo "Verification des équipement de navigation"
-                    sleep 10
-                    echo "Léger disfonctionnement de la carte numerique"  
-                }
-                script("verification-vitesse"){
-                    echo "Verification de la vitesse"
-                    sleep 15
-                    echo "Test de vitesse ok"  
-                }
-                script("verification-trajectoire"){
-                    echo "Verification de la trajectoire"
-                    sleep 10
-                    echo "Trajectoire ok" 
-                }
-                script("verification-altitude"){
-                    echo "Verification de l'altitude"
-                    sleep 10
-                    echo "Test altitude ok"
-                }
+        stage('TEST') {
+            steps {
+                echo "Verification des systemes l'electroniques"
+                sleep 10
+                echo "Integrite du systeme electronique à 100%"
+
+                echo "Verification des équipement de navigation"
+                sleep 10
+                echo "Léger disfonctionnement de la carte numerique"
+
+                echo "Verification de la vitesse"
+                sleep 15
+                echo "Test de vitesse ok"
+
+                echo "Verification de la trajectoire"
+                sleep 10
+                echo "Trajectoire ok"
+
+                echo "Verification de l'altitude"
+                sleep 10
+                echo "Test altitude ok"
             }
         }
 
-        stage('DEPLOY'){
-            steps{
-                script("verification-equipement-sec"){
-                    echo "Verification de l'integrite des equipements de secours"
-                    sleep 10
-                    echo "Equipements de secours ok"
-                }
-                script("verification-communication"){
-                    echo "Verification des equipements de communication"
-                    sleep 10
-                    echo "Test radio ok"  
-                }
-                script("verification-train"){
-                    echo "Verification du déploiement du train d'atterissage"
-                    sleep 10
-                    echo "Train sorti" 
-                }
+        stage('DEPLOY') {
+            steps {
+                echo "Verification de l'integrite des equipements de secours"
+                sleep 10
+                echo "Equipements de secours ok"
+
+                echo "Verification des equipements de communication"
+                sleep 10
+                echo "Test radio ok"
+
+                echo "Verification du déploiement du train d'atterissage"
+                sleep 10
+                echo "Train sorti"
             }
         }
     }
-
 }
