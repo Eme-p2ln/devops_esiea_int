@@ -22,10 +22,10 @@ pipeline {
             }
         }
         stage('BUILD') {
-                steps {
-                    echo 'Developpement'
-                }
+            steps {
+                echo 'Developpement'
             }
+        }
         stage('TEST') {
             steps {
                 echo 'Testing'
