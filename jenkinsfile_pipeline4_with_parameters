@@ -14,15 +14,15 @@ pipeline {
             steps {
                 script {
                     def name = "${params.NAME}"
-                    echo "$name"
+                    echo "Name: $name"
                     def desc = "${params.DESC}"
-                    echo "$desc"
+                    echo "Project description: $desc"
                     def skip_test = "${params.SKIP_TEST}"
-                    echo "$skip_test"
+                    echo "Skip tests?: $skip_test"
                     def branch = "${params.BRANCH}"
-                    echo "$branch"
+                    echo "Branch: $branch"
                     def sonar_server_pwd = "${params.SONAR_SERVER_PWD}"
-                    echo "$sonar_server_pwd"
+                    echo "Password: $sonar_server_pwd"
                 }
             }
         }
